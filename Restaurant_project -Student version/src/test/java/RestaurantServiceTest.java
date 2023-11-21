@@ -33,7 +33,55 @@ class RestaurantServiceTest {
     }
     // <<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+<<<<<<< .mine
      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+         // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    @DisplayName("Calculate order value for an existing restaurant and items")
+    public void calculateOrderValueForExistingRestaurantAndItems() throws restaurantNotFoundException {
+    addRestaurantWithMenu("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("22:00:00"));
+
+    // Assuming "Sweet corn soup" and "Vegetable lasagne" are items in the menu
+    double orderValue = service.calculateOrderValue("Amelie's cafe", "Sweet corn soup", "Vegetable lasagne");
+
+    assertEquals(388.0, orderValue);
+   }
+
+   @Test
+    @DisplayName("Calculate order value for a non-existing restaurant should throw an exception")
+    public void calculateOrderValueForNonExistingRestaurant() {
+    assertThrows(restaurantNotFoundException.class, () -> service.calculateOrderValue("Pantry d'or", "Some Item"));
+   }
+
+    // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+    
+
+>>>>>>> .theirs
     // >>>>>>>>>>>>>>>>>>>>>>ADMIN: ADDING & REMOVING RESTAURANTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void remove_restaurant_should_reduce_list_of_restaurants_size_by_1() throws restaurantNotFoundException {

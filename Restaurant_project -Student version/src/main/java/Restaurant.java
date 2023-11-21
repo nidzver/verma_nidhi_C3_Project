@@ -64,5 +64,16 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+<<<<<<< .mine
    
+
+
+
+=======
+    public List<Item> getMenu() {
+        return this.menu;
+    }
+
+>>>>>>> .theirs
+
 }

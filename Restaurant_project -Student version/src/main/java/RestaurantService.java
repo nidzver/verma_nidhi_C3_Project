@@ -31,5 +31,51 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
+<<<<<<< .mine
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+
+     public double calculateOrderValue(String restaurantName, String... itemNames) throws restaurantNotFoundException {
+        Restaurant restaurant = findRestaurantByName(restaurantName);
+
+        if (restaurant == null) {
+            throw new restaurantNotFoundException(restaurantName);
+        }
+
+        double totalOrderValue = 0.0;
+
+        for (String itemName : itemNames) {
+            Item item = restaurant.findItemByName(itemName);
+
+            if (item != null) {
+                totalOrderValue += item.getPrice();
+            }
+         
+        }
+
+        return totalOrderValue;
+    }
+
+>>>>>>> .theirs
 }

@@ -11,6 +11,9 @@ public class Item {
         return name;
     } 
     
+     public int getPrice() {
+        return this.price;
+    }
     @Override
     public String toString(){
         return  name + ":"
