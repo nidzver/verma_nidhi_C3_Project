@@ -37,8 +37,4 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
-<<<<<<< .mine
 </project> 
-=======
-</project>
->>>>>>> .theirs

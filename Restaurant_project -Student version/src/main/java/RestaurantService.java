@@ -4,7 +4,8 @@ import java.util.List;
 
 public class RestaurantService {
     private static List<Restaurant> restaurants = new ArrayList<>();
-
+    
+     //missing lines addded for this method
     public Restaurant findRestaurantByName(String restaurantName){
           for (Restaurant restaurant : restaurants) {
             if (restaurant.getName().equals(restaurantName)) {
@@ -31,51 +32,5 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
-<<<<<<< .mine
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-
-     public double calculateOrderValue(String restaurantName, String... itemNames) throws restaurantNotFoundException {
-        Restaurant restaurant = findRestaurantByName(restaurantName);
-
-        if (restaurant == null) {
-            throw new restaurantNotFoundException(restaurantName);
-        }
-
-        double totalOrderValue = 0.0;
-
-        for (String itemName : itemNames) {
-            Item item = restaurant.findItemByName(itemName);
-
-            if (item != null) {
-                totalOrderValue += item.getPrice();
-            }
-         
-        }
-
-        return totalOrderValue;
-    }
-
->>>>>>> .theirs
 }

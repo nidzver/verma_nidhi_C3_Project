@@ -25,12 +25,14 @@ class RestaurantTest {
     }
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    //added missing lines of test case
     @Test
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time() {
         addRestaurantWithMenu("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("22:00:00"));
         assertTrue(restaurant.isRestaurantOpen());  
     }
-
+     
+     //added missing lines of test case
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time() {
         addRestaurantWithMenu("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("12:00:00"));
