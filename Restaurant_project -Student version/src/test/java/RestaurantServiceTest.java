@@ -34,6 +34,18 @@ class RestaurantServiceTest {
         assertThrows(restaurantNotFoundException.class, () -> service.findRestaurantByName("Pantry"));
     }
     // <<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+     // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
+     //Failing test case for calculate order value
+
+   @Test
+    @DisplayName("Calculate order value for a non-existing restaurant should throw an exception")
+    public void calculateOrderValueForNonExistingRestaurant() {
+    assertThrows(restaurantNotFoundException.class, () -> service.calculateOrderValue("Pantry d'or", "Some Item"));
+   }
+
+    // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     // >>>>>>>>>>>>>>>>>>>>>>ADMIN: ADDING & REMOVING RESTAURANTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void remove_restaurant_should_reduce_list_of_restaurants_size_by_1() throws restaurantNotFoundException {
