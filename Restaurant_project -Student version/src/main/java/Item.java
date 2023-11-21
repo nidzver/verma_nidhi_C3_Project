@@ -12,7 +12,7 @@ public class Item {
     } 
     public int getPrice() {
         return this.price;
-    }
+    } 
     @Override
     public String toString(){
         return  name + ":"

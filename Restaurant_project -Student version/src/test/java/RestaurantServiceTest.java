@@ -36,12 +36,23 @@ class RestaurantServiceTest {
     // <<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
 
      // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
-     //Failing test case for calculate order value
 
+    //Failing test case for calculate order value
    @Test
     @DisplayName("Calculate order value for a non-existing restaurant should throw an exception")
     public void calculateOrderValueForNonExistingRestaurant() {
     assertThrows(restaurantNotFoundException.class, () -> service.calculateOrderValue("Pantry d'or", "Some Item"));
+   }
+     //Passing test case for calculate order value
+    @Test
+    @DisplayName("Calculate order value for an existing restaurant and items")
+    public void calculateOrderValueForExistingRestaurantAndItems() throws restaurantNotFoundException {
+    addRestaurantWithMenu("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("22:00:00"));
+
+    // Assuming "Sweet corn soup" and "Vegetable lasagne" are items in the menu
+    double orderValue = service.calculateOrderValue("Amelie's cafe", "Sweet corn soup", "Vegetable lasagne");
+
+    assertEquals(388.0, orderValue);
    }
 
     // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
