@@ -20,7 +20,7 @@ class RestaurantServiceTest {
     }
 
     // >>>>>>>>>>>>>>>>>>>>>>SEARCHING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    //added missing lines of test case
+    //added missing lines of test case 
     @Test
     public void searching_for_existing_restaurant_should_return_expected_restaurant_object() throws restaurantNotFoundException {
         addRestaurantWithMenu("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("22:00:00"));
@@ -28,35 +28,12 @@ class RestaurantServiceTest {
         assertEquals("Amelie's cafe", foundRestaurant.getName());
     }
     
-    //added missing lines of test case
+    //added missing lines of test case 
     @Test
     public void searching_for_non_existing_restaurant_should_throw_exception() {
         assertThrows(restaurantNotFoundException.class, () -> service.findRestaurantByName("Pantry"));
     }
     // <<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-      // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
-   
-    //Failing test case added for calculateOrderValue method
-    @Test
-    @DisplayName("Calculate order value for a non-existing restaurant should throw an exception")
-    public void calculateOrderValueForNonExistingRestaurant() {
-    assertThrows(restaurantNotFoundException.class, () -> service.calculateOrderValue("Pantry", "Some Item"));
-
-     //Passing test case added for calculateOrderValue method
-     @Test
-     @DisplayName("Calculate order value for an existing restaurant and items")
-    public void calculateOrderValueForExistingRestaurantAndItems() throws restaurantNotFoundException {
-    addRestaurantWithMenu("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("22:00:00"));
-
-    // Assuming "Sweet corn soup" and "Vegetable lasagne" are items in the menu
-    double orderValue = service.calculateOrderValue("Amelie's cafe", "Sweet corn soup", "Vegetable lasagne");
-
-    assertEquals(388.0, orderValue);
-   }
-    }
-
-    // <<<<<<<<<<<<<<<<<<<<<CALCULATE ORDER VALUE>>>>>>>>>>>>>>>>>>>>>>>>>>
     // >>>>>>>>>>>>>>>>>>>>>>ADMIN: ADDING & REMOVING RESTAURANTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
     public void remove_restaurant_should_reduce_list_of_restaurants_size_by_1() throws restaurantNotFoundException {

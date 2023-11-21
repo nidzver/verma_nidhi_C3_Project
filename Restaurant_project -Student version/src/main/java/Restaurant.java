@@ -17,7 +17,7 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
     
-    //missing lines addded for this method
+    //missing lines addded for this method 
     public boolean isRestaurantOpen() {
         if (currentTime.isAfter(openingTime) && currentTime.isBefore(closingTime)) {
             return true;
@@ -28,7 +28,7 @@ public class Restaurant {
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
-    //missing lines addded for this method
+    //missing lines addded for this method 
     public List<Item> getMenu() {
            return this.menu;
     }
@@ -65,10 +65,6 @@ public class Restaurant {
 
     public String getName() {
         return name;
-    }
-
-    public List<Item> getMenu() {
-        return this.menu;
     }
    
 }
