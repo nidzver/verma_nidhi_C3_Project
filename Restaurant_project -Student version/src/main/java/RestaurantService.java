@@ -12,8 +12,7 @@ public class RestaurantService {
             }
             
         }
-              return null; // Return null if no restaurant with the given name is found
-            
+        return null; // Return null if no restaurant with the given name is found         
        
     }
 
